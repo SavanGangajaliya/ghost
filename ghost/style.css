@@ -1,0 +1,135 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #202625;
+}
+.ghost
+{
+    position: relative;
+    width: 160px;
+    height: 180px;
+    background: #fff;
+    border-radius: 70px 70px 0 0;
+    transform: translateY(-15px);
+    cursor: pointer;   
+    animation: float 4s linear infinite;
+}
+@keyframes float 
+{
+    50%
+    {
+        transform: translateY(15px);
+    }
+}
+.face
+{
+    position: absolute;
+    top: 60px;
+    left: calc(100%/2 - 60px);
+    width: 120px;
+}
+.face .eyes
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 18px;
+    height: 24px;
+}
+.ghost .eyes span
+{
+    width: 24px;
+    height: 12px;
+    background: #20262a;
+    border-radius: 8px 8px 26px 26px;
+    transition: 0.4s;
+}
+.ghost:hover .eyes span
+{
+    height: 24px;
+    border-radius: 50%;
+
+}
+.ghost .mouth
+{
+    display: flex;
+    justify-content: space-around;
+
+}
+.ghost .mouth span
+{
+    width: 40px;
+    height: 9px;
+    background: #20262a;
+    border-radius: 0 0 20px 20px;
+    transition: 0.4s;
+}
+.ghost:hover .mouth span
+{
+    height: 20px;
+
+}
+.ghost .hands
+{
+    position: absolute;
+    top: 90px;
+    left: -30px;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+}
+.ghost .hands span
+{
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    transform: translateY(-5px);
+    animation: shake 4s linear infinite;
+}
+@keyframes shake 
+{
+    50%
+    {
+        transform: translateY(5px);
+    }    
+}
+.ghost .hands span:nth-child(1)
+{
+    border-radius: 12px 0 0 20px;
+}
+.ghost .hands span:nth-child(2)
+{
+    border-radius: 0 12px 20px 0px;
+    animation-delay: 2s;
+}
+.ghost .feet
+{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: -20px;
+}
+.ghost .feet span
+{
+    flex: 1;
+    height: 22px;
+    background: #fff;
+    border-radius: 0 0 20px 20px;
+}
+.ghost .feet span:first-child
+{
+    border-radius: 0 0 12px 20px;
+}
+.ghost .feet span:last-child
+{
+    border-radius: 0 0 20px 12px;
+}
